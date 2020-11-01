@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+     
+        .gridcontainer{
+            display:grid;grid-template-columns: 50% 50%;
+            
+        }
+        .grid-item-1{
+            
+           padding-left: 15%;
+            padding-top: 30%;
+            margin-right: 5%;
+            
+        }
+        .grid-item-2{
+            
+            border-radius: 10px;
+            margin-left: 5%;
+            padding:2%;
+            height:auto;
+            
+        }
+        ::placeholder{
+            color:grey;
+            font-size: 15px;
+            padding-left:15px;
+        }
+        .loginform{
+            
+            background-color: white;
+            border-radius: 10px;
+            width:60%;
+            margin-left: 5%;
+            padding:2%;
+            height:auto;
+            margin-top: 15%;
+            
+        }
+        .buttonprofile {
+    display: block;
+    width:88%;
+    height: 50px;
+    background: #1E90FF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.buttonaccount {
+    
+    width:60%;
+    height: 50px;
+    background: mediumseagreen;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    margin-left: 25%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+
+.buttonsignup {
+    
+    display: block;
+    width:88%;
+    height: 50px;
+    background:mediumseagreen;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+
+.signup{
+    width:30%;
+    height:auto;
+    background-color: #696969;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 1%;
+    
+    background-color: white;
+    padding-top:-1px;
+    padding: 1%;
+    
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+    </style>
+    <script>
+        function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+ function validateform()
+ {
+     var logid = document.getElementById("loginid").value;
+     var logpass = document.getElementById("loginpassword").value;
+     var emailpattern=/^[a-zA-z0-9.]{1,}@[a-z]{2,}.[a-z]{2,3}[.]{0,}[a-z]{0,3}$/;
+     var passwordpattern=/^(?=.*[0-9])(?=.*[@!#$])(?=.*[A-Z])(?=.*[A-z])[a-z0-9A-z!@#$%^&]{4,}$/;
+     var phonepattern=/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+     if(logid=='' || logpass=='')
+     {
+        alert("Please fill all the fields");
+     }
+    else if(!phonepattern.test(logid) && !emailpattern.test(logid))
+    {
+        document.getElementById("loginidlabel").style="visibility:visible;color:red;margin-left:40px;"
+    }
+     else if(!passwordpattern.test(logpass))
+     {
+        document.getElementById("loginpasslabel").style="visibility:visible;color:red;margin-left:40px;"
+     }
+     else
+     {
+        document.getElementById("loginfm").submit();
+     }
+    
+
+ }
+
+ function signupvalidate()
+ {
+      var emailpattern=/^[a-zA-z0-9.]{1,}@[a-z]{2,}.[a-z]{2,3}[.]{0,}[a-z]{0,3}$/;
+     var passwordpattern=/^(?=.*[0-9])(?=.*[@!#$])(?=.*[A-Z])(?=.*[A-z])[a-z0-9A-z!@#$%^&]{4,}$/;
+     var phonepattern=/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+     var firstname = document.getElementById("firstnm").value;
+     var lastname = document.getElementById("lastnm").value;
+     var userid = document.getElementById("userid").value;
+     var userpass = document.getElementById("userpass").value;
+     var udate=document.getElementById("udate").value;
+     var umonth=document.getElementById("umonth").value;
+     var uyear=document.getElementById("uyear").value;
+     var dob=udate+"/"+umonth+"/"+uyear;
+     var gen
+     if(document.getElementById("male").checked)
+     {
+           gen=document.getElementById("male").value;
+     }
+     else if(document.getElementById("female").checked)
+     {
+         gen=document.getElementById("female").value;
+     }
+     else if(document.getElementById("custom").checked)
+     {
+         gen=document.getElementById("custom").value;
+     }
+     else
+     {
+         gen='';
+     }
+    
+   if(firstname.trim()=='')
+   {
+       document.getElementById('fnamelabel').style="visibility:visible;color:red;"
+   }
+   else if(lastname.trim()=='')
+   {
+    document.getElementById('lnamelabel').style="visibility:visible;color:red;"
+   }
+   else if(!phonepattern.test(userid) && !emailpattern.test(userid))
+    {
+        document.getElementById("emaillabel").style="visibility:visible;color:red;margin-left:40px;"
+    }
+     else if(!passwordpattern.test(userpass))
+     {
+        document.getElementById("passlabel").style="visibility:visible;color:red;margin-left:40px;"
+     }
+     else if(gen == '')
+     {
+        document.getElementById("genlabel").style="visibility:visible;color:red;margin-left:40px;"
+     }
+     else
+     {
+        document.getElementById("loginfm").submit();
+     }
+
+ }
+
+    </script>
+</head>
+<body style="background-color:#f7f7f7">
+    <div class="gridcontainer">
+        <div class="grid-item-1">
+            <img src="facebook.png" width="350px"/>
+            <p style="margin-top:15px;font-size:30px;">Facebook helps you connect and share with the people in your life.</p>
+        </div>
+        <div class="grid-item-2">
+            <div class="loginform">
+            <form id="loginfm" action="Home.html">
+                 <input type="text" placeholder="Email Address or Phone Number" id="loginid" style="border-radius:10px;height:50px;width:90%;margin-left:5%;margin-right: 5%;border:1px solid grey ;">
+                </br>
+                <label id="loginidlabel" style="color:red;visibility:hidden;">Please Enter Correct Email or Phone</label>
+                 <input type="password" placeholder="Password" id="loginpassword" style="border-radius:10px;height:50px;width:90%;margin-left:5%;margin-right: 5%;margin-top: 5%;border:1px solid grey;">
+                 <label id="loginpasslabel" style="color:red;visibility:hidden;">Please Enter Correct Password!</label>
+                 <input type="button" class="buttonprofile" value="Log In" onclick="validateform()">
+                  
+                 <p style="text-align: center;color:#1E90FF">Forgot Password?</p>
+                 <hr/>
+
+                </form>
+                <button class="buttonaccount" onclick="on()">
+                    Create New Account
+                 </button>
+            </div>
+               
+        </div>
+
+    </div>
+    <div  id="overlay">
+        <div class="signup">
+            <div style="display: flex;flex-direction: row;justify-content: space-between;">
+            <h1 style="margin-top: -10px;">Sign Up</h1>
+            <i class="fa fa-times fa-2x" aria-hidden="true" style="margin-top:0px;" onclick="off()"></i>
+           </div>
+            <h3 style="margin-top: -15px;">Its quick and easy</h3>
+            <hr/>
+        <form action="Home.html">
+        <div style="display: flex;flex-direction: row;justify-content: space-evenly;margin-top: 15px;">
+        <input type="text" placeholder="Firstname" id="firstnm" style="border-radius:10px;height:40px;width:50%;margin-left:5%;margin-right: 5%;border:1px solid grey ;">
+        <br/>
+       
+        <input type="text" placeholder="Surname" id="lastnm" style="border-radius:10px;height:40px;width:50%;margin-left:5%;margin-right: 5%;border:1px solid grey ;">
+      
+       </div>
+       <label id="fnamelabel" style="color:red;visibility:hidden;">Enter valid first name.</label>
+       <label id="lnamelabel" style="color:red;visibility:hidden;">Enter valid last name.</label>
+       <input type="text" placeholder="Mobile Number or Email Address" id="userid" style="border-radius:10px;height:40px;width:90%;margin-left:5%;margin-right: 5%;border:1px solid grey;margin-top: 5%;">
+       <label id="emaillabel" style="color:red;visibility:hidden;">Please Enter Correct Email or Phone.</label>
+       <br/>
+
+       <input type="password" placeholder="New Password" id="userpass" style="border-radius:10px;height:40px;width:90%;margin-left:5%;margin-right: 5%;border:1px solid grey;margin-top: 5%;">
+       <label id="passlabel" style="color:red;visibility:hidden;">Password is too weak.</label>
+       <br/>
+       <p>Date of Birth ?</p>
+       <div style="display: flex;flex-direction: row;justify-content: space-evenly;">
+         <select id="udate" style="width:100px;height: 40px;border-radius: 10px;padding-left: 10px;">
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+             <option value="7">7</option>
+             <option value="8">8</option>
+             <option value="9">9</option>
+             <option value="10">10</option>
+             <option value="11">11</option>
+             <option value="12">12</option>
+             <option value="13">13</option>
+             <option value="14">14</option>
+             <option value="15">15</option>
+             <option value="16">16</option>
+             <option value="17">17</option>
+             <option value="18">18</option>
+             <option value="19">19</option>
+             <option value="20">20</option>
+             <option value="21">21</option>
+             <option value="22">22</option>
+             <option value="23">23</option>
+             <option value="24">24</option>
+             <option value="25">25</option>
+             <option value="26">26</option>
+             <option value="27">27</option>
+             <option value="28">28</option>
+             <option value="29">29</option>
+             <option value="30">30</option>
+             <option value="31">31</option>   
+         </select>
+         <select id="umonth" style="width:100px;height: 40px;border-radius: 10px;padding-left: 10px;">
+            <option value="jan">Jan</option>
+            <option value="feb">Feb</option>
+            <option value="mar">Mar</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+            <option value="june">June</option>
+            <option value="july">July</option>
+            <option value="aug">Aug</option>
+            <option value="sep">Sep</option>
+            <option value="oct">Oct</option>
+            <option value="nov">Nov</option>
+            <option value="dec">Dec</option>
+         </select>
+         <select id="uyear" style="width:100px;height: 40px;border-radius: 10px;padding-left: 10px;">
+             <option value="1995">1995</option>
+             <option value="1996">1996</option>
+             <option value="1997">1997</option>
+             <option value="1998">1998</option>
+             <option value="1999">1999</option>
+             <option value="2000">2000</option>
+             <option value="2001">2001</option>
+             <option value="2002">2002</option>
+             <option value="2003">2003</option>
+             <option value="2004">2004</option>
+             <option value="2005">2005</option>
+             <option value="2006">2006</option>
+             <option value="2007">2007</option>
+             <option value="2008">2008</option>
+             <option value="2009">2009</option>
+             <option value="2010">2010</option>
+             <option value="2011">2011</option>
+             <option value="2012">2012</option>
+             <option value="2013">2013</option>
+             <option value="2014">2014</option>
+             <option value="2015">2015</option>
+             <option value="2016">2016</option>
+             <option value="2017">2017</option>
+             <option value="2018">2018</option>
+             <option value="2019">2019</option>
+             <option value="2020">2020</option>
+
+         </select>
+
+       </div>
+       <p>Gender ?</p>
+       <div style="display: flex;flex-direction: row;justify-content: space-evenly;">
+           <div style="width:90px;height: 30px;border: 1px solid black;padding-top:5px;border-radius: 10px;padding-left: 10px;">
+            Male <input type="radio" id="male" name="gender" value="Male" />
+            </div>
+            <div style="width: 90px;height: 30px;border: 1px solid black;padding-top:5px;border-radius: 10px;padding-left: 10px;">
+                Female <input type="radio" id="female" name="gender" value="Female" />
+                </div>
+                <div style="width: 90px;height: 30px;border: 1px solid black;padding-top:5px;border-radius: 10px;padding-left: 10px;">
+                    Custom <input type="radio" id="custom" name="gender" value="Custom" />
+                    </div>
+       </div>
+       <label id="genlabel" style="color:red;visibility:hidden;">Select the gender</label>
+       <p>By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+       <input type="button" class="buttonsignup" value="Sign Up" onclick="signupvalidate()"/>
+      
+    </form>
+       </div>
+    </br>
+    </div>
+</body>
+</html>
