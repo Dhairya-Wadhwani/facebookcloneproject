@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .list ul{
+  display:inline-flex;
+  list-style: none;
+  color: white;
+  margin-top: -5px;
+  
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns:40% 55%;
+    margin-left:20%;
+    margin-right: 15%;
+}
+
+.grid-item{
+    border:2px solid red;
+}
+
+.list ul li a{
+ text-decoration:none;
+ color:white;
+ padding:15px;
+ font-weight: bold;
+ 
+}
+
+.intro{
+    width:100%;
+    height:auto;
+    background-color: #353839;
+    color:white;
+    border-radius: 10px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    margin-top: 5%;
+}
+
+.buttonprofile {
+    display: block;
+    width:80%;
+    height: 20px;
+    background: #696969;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    margin-left: 7%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+.buttonprofile:hover{
+    cursor: pointer;
+}
+.nestedgrid{
+    display:grid;
+    grid-template-columns: auto auto auto;
+   
+}
+.nestedgriditem{
+    padding: 10px;
+    margin-left:10px;
+    margin-right: 10px;
+}
+
+.storypostcontainer{
+    width:95%;
+    height:auto;
+    border-radius: 20px;
+   background-color:#353839;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 4%;
+   
+}
+.storyaddcontainer{
+   
+    display: flex;
+    flex-direction: row;
+}
+.storyactivitycontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+::placeholder{
+    color:white;
+}
+
+.profilepost{
+    width:95%;
+
+    height:1250px;
+    border-radius: 20px;
+    background-color:#353839 ;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 4%;
+    overflow-y: scroll;
+
+}
+.userpostdisplay{
+    width:85%;
+    height:auto;
+    padding:1%;
+    align-items: center;
+    background-color: #696969;
+    border-radius: 20px;
+    margin-top:5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+.storyactivitycontainer p:hover{
+    background-color: #696969;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  
+}
+
+.list ul li a:hover{
+    color:#1E90FF;
+    text-decoration: underline;
+}
+
+.profilepost::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A9A9A9; 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3d3d3d; 
+}
+
+
+    </style>
+</head>
+<body style="background-color: #141414;color: white;">
+    <div style="width: 60%;height:auto;background-color:#3d3d3d;padding-bottom:1%;margin-left: 20%;margin-right: 20%;">
+        <img src="bheem.jpg" width="100%px" height="300px" style="position: relative;"/> 
+       <img src="dhairyapass2.jpg" width="200px" height="200" style="border-radius: 100px;position: absolute;left:650px;bottom:400px;"/>
+       <h1 style="text-align: center;color:white;font-size: 50px;">Dhairya Wadhwani</h1>
+       <p style="color:#1E90FF;text-align:center;font-size: 20px;margin-top: -25px;">Add Bio</p>
+       <hr/>
+       <div style="display: flex;flex-direction: row;justify-content: space-between;margin-top: 5%;">
+        <div class="list">
+            <ul>
+               <li><a href="#">TimeLine</a></li>
+               <li><a href="#about">About</a></li>
+              <li> <a href="#friends">Friends</a></li>
+              <li><a href="#photos">Photos</a></li>
+            </ul>  
+        </div>
+        <div style="display: flex;flex-direction: row;">
+            <div style="width: 120px;height: 30px;border-radius:4px;background-color:#696969;text-align: center;">
+            <p style="color: white;margin-top: 5px;">  <i class="fa fa-pencil" aria-hidden="true"></i> Edit Profile  </p>
+            </div>
+            <div style="width: 60px;height: 30px;border-radius:4px;background-color:#696969;text-align: center;margin-left: 2%;">
+               <i class="fa fa-eye" aria-hidden="true" style="color:white;margin-top: 5px;"></i>
+                </div>
+                <div style="width: 60px;height: 30px;border-radius:4px;background-color:#696969;text-align: center;margin-left: 2%;">
+                    <i class="fa fa-search" aria-hidden="true" style="color:white;margin-top: 5px;"></i>
+                     </div>
+                     <div style="width: 60px;height: 30px;border-radius:4px;background-color:#696969;text-align: center;margin-left: 2%;">
+                        <i class="fa fa-ellipsis-h" aria-hidden="true" style="color:white;margin-top: 5px;"></i>
+                         </div>
+
+        </div>
+
+       </div>
+    </div>
+   <div class="grid-container">
+         
+         <div class="grid-item-2">
+             
+            <div class="intro" id="about">
+                <h1 style="margin-left: 2%;">Intro</h1>
+                <div style="display: flex;flex-direction: row;margin-left: 2%;">
+                    
+                        <i class="fa fa-graduation-cap" aria-hidden="true" id="showcrea"  style="margin-top:15px;"></i>
+        
+                    <p style="margin-top:15px;margin-left: 2%;">Studied at Lovely Professional University</p>
+                  </div>
+                  <div style="display: flex;flex-direction: row;margin-left: 2%;">
+                    
+                        <i class="fa fa-graduation-cap" aria-hidden="true" id="showcrea"  style="margin-top:15px;"></i>
+        
+                    <p style="margin-top:15px;margin-left: 2%;">Went to Siddharth Modern H.S. School</p>
+                  </div>
+
+                  <div style="display: flex;flex-direction: row;margin-left:2%;">
+                    
+                        <i class="fa fa-home" aria-hidden="true" id="showcrea"  style="margin-top:15px;"></i>
+                 
+                    <p style="margin-top:15px;margin-left: 2%;">Lives in <b>Jalandhar,India</b></p>
+                  </div>
+                  
+                  <div style="display: flex;flex-direction: row;margin-left:2%;">
+              
+                        <i class="fa fa-map-marker" aria-hidden="true" id="showcrea"  style="margin-top:15px;"></i>
+                   
+                    <p style="margin-top:15px;margin-left: 2%;">From <b>Gwalior</b></p>
+                  </div>
+                  <div style="display: flex;flex-direction: row;margin-left:2%;">
+                    
+                        <i class="fa fa-heart" aria-hidden="true" id="showcrea"  style="margin-top:15px;"></i>
+                   
+                    <p style="margin-top:15px;margin-left: 2%;">Single</p>
+                  </div>
+                  <div style="display: flex;flex-direction: row;margin-left:2%;">
+                
+                        <i class="fa fa-clock-o" aria-hidden="true" id="showcrea"  style="margin-top:15px;"></i>
+                        <p style="margin-top:15px;margin-left: 2%;">Joined on January 2014</p>
+                  </div>
+                  <div class="buttonprofile">
+                     Edit Details
+                  </div>
+                  <div class="buttonprofile">
+                    Add Hobbies
+                 </div>
+                 <div class="buttonprofile">
+                    Edit Featured
+                 </div>
+            </div>
+
+            <div class="intro" id="photos">
+                <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                    <h1 style="margin-left: 5px;">Photos</h1>
+                    <p style="margin-right: 5px;color:#1E90FF;margin-top: 30px;">See all Photos</p>
+                </div>
+                <div class="nestedgrid">
+                    <div class="nestedgriditem">
+                        <img src="ben10.jpg" width="100px" height="100px" style="border-radius: 10px;"/>
+                        <img src="sachin.jpg" width="100px" height="100px" style="border-radius: 10px;"/>
+                        <img src="2002.jpg" width="100px" height="100px" style="border-radius: 10px;"/>
+                    </div>
+                    <div class="nestedgriditem">
+                        <img src="bheem.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                        <img src="kedarnath.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                        <img src="kohli.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                    </div>
+                    <div class="nestedgriditem">
+                        <img src="dhairyapass2.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                        <img src="chetak.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                        <img src="luka.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                    </div>
+                </div>
+            </div>
+            <div class="intro" id="friends">
+                <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                    <h1 style="margin-left: 5px;">Friends</h1>
+                    <p style="margin-right: 5px;color:#1E90FF;margin-top: 30px;">See all Friends</p>
+                </div>
+                <div class="nestedgrid">
+                    <div class="nestedgriditem">
+                        <img src="2002.jpg" width="100px" height="100px" style="border-radius: 10px;"/>
+                        <img src="mithali.jpg" width="100px" height="100px" style="border-radius: 10px;"/>
+                        <img src="ben10.jpg" width="100px" height="100px" style="border-radius: 10px;"/>
+                    </div>
+                    <div class="nestedgriditem">
+                        <img src="kedarnath.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                        <img src="bheem.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                        <img src="sachin.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                    </div>
+                    <div class="nestedgriditem">
+                        <img src="dhairyapass2.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                        <img src="luka.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                        <img src="smriti.jpg" width="100px" height="100px" style="border-radius: 10px;margin-left: -25px;"/>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="grid-item-3">
+            <div class="storypostcontainer">
+                <div class="storyaddcontainer">
+                <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;margin-top:10px;margin-left: 10px;"/>
+                <input type="text" placeholder="What's on your mind, Dhairya?" style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color:#696969;border-style: none;margin-top:10px;"/>
+                </div>
+                <hr/>
+                <div class="storyactivitycontainer">
+                    <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-video-camera" aria-hidden="true"  style="margin-right: 5%;color:rgb(247, 15, 158)"></i>Live Video</p>
+                    <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-picture-o" aria-hidden="true"  style="margin-right: 5%;color:lightgreen"></i>Photos/Videos</p>
+                    <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-smile-o" aria-hidden="true"  style="margin-right: 5%;color:yellow"></i>Feeling/Activity</p>
+            
+                </div>
+            </div>
+            <div class="profilepost">
+                <h1 style="margin-left: 5%;">My Posts</h1>
+                <div class="userpostdisplay">
+                    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                        <div style="display: flex;flex-direction: row;white-space: pre;">
+                            <div style="display: flex;flex-direction: row;white-space: pre;">
+                                <img  src="msd.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+                                <p style="margin-top: 2px;margin-left: 10px;">Aditya Chawla <i class="fa fa-caret-right" aria-hidden="true"  style="margin-right: 2%;"></i>  Dhairya Wadhwani </p>
+                            </div>
+                          
+                            
+                        </div>
+                        <div style="margin-top: 1%;">
+                            <i class="fa fa-ellipsis-h fa-2x" aria-hidden="true" ></i>
+                        </div>
+                       
+                    </div>
+                    <p style="margin-left:15%;margin-top: -25px;">3h ago</p>
+                    <p style="margin-left: 15%;font-size:25px;">Happy Birthday!</p>
+                    
+                    <div class="storyactivitycontainer">
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"  style="margin-right: 2%;"></i>Like</p>
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-comments-o" aria-hidden="true"  style="margin-right: 2%;"></i>Comment</p>
+                        
+                    </div>
+                    <hr/>
+                    <div class="storyaddcontainer">
+                        <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+                        <input type="text" placeholder="Write a comment..." style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color: #696969;border-style: none;"/>
+                        </div>
+                
+                </div>
+                <div class="userpostdisplay">
+                    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                        <div style="display: flex;flex-direction: row;white-space: pre;">
+                            <div style="display: flex;flex-direction: row;white-space: pre;">
+                                <img  src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+                                <p style="margin-top: 2px;margin-left: 10px;">Dhairya Wadhwani</p>
+                            </div>
+                          
+                            
+                        </div>
+                        <div style="margin-top: 1%;">
+                            <i class="fa fa-ellipsis-h fa-2x" aria-hidden="true" ></i>
+                        </div>
+                       
+                    </div>
+                    <p style="margin-left:15%;margin-top: -25px;">3h ago</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <img  src="bheem.jpg" width="100%" style="margin-top: 5%;"/>
+                    <div class="storyactivitycontainer">
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"  style="margin-right: 2%;"></i>Like</p>
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-comments-o" aria-hidden="true"  style="margin-right: 2%;"></i>Comment</p>
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-share" aria-hidden="true"  style="margin-right: 2%;"></i>Share</p>
+                    </div>
+                    <hr/>
+                    <div class="storyaddcontainer">
+                        <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+                        <input type="text" placeholder="Write a comment..." style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color: #696969;border-style: none;"/>
+                        </div>
+                
+                </div>
+
+                <div class="userpostdisplay">
+                    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                        <div style="display: flex;flex-direction: row;white-space: pre;">
+                            <div style="display: flex;flex-direction: row;white-space: pre;">
+                                <img  src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+                                <p style="margin-top: 2px;margin-left: 10px;">Dhairya Wadhwani</p>
+                            </div>
+                          
+                            
+                        </div>
+                        <div style="margin-top: 1%;">
+                            <i class="fa fa-ellipsis-h fa-2x" aria-hidden="true" ></i>
+                        </div>
+                       
+                    </div>
+                    <p style="margin-left:15%;margin-top: -25px;">1 month ago</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <video width="100%" height="240" controls>
+                        <source src="llc.mp4" type="video/mp4">
+                      
+                      </video>
+                    <div class="storyactivitycontainer">
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"  style="margin-right: 2%;"></i>Like</p>
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-comments-o" aria-hidden="true"  style="margin-right: 2%;"></i>Comment</p>
+                        
+                    </div>
+                    <hr/>
+                    <div class="storyaddcontainer">
+                        <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+                        <input type="text" placeholder="Write a comment..." style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color: #696969;border-style: none;"/>
+                        </div>
+                
+                </div>
+
+                <div class="userpostdisplay">
+                    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                        <div style="display: flex;flex-direction: row;white-space: pre;">
+                            <div style="display: flex;flex-direction: row;white-space: pre;">
+                                <img  src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+                                <p style="margin-top: 2px;margin-left: 10px;">Dhairya Wadhwani</p>
+                            </div>
+                          
+                            
+                        </div>
+                        <div style="margin-top: 1%;">
+                            <i class="fa fa-ellipsis-h fa-2x" aria-hidden="true" ></i>
+                        </div>
+                       
+                    </div>
+                    <p style="margin-left:15%;margin-top: -25px;">10 months ago</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <img  src="chetak.jpg" width="100%" style="margin-top: 5%;"/>
+                    <div class="storyactivitycontainer">
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"  style="margin-right: 2%;"></i>Like</p>
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-comments-o" aria-hidden="true"  style="margin-right: 2%;"></i>Comment</p>
+                        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-share" aria-hidden="true"  style="margin-right: 2%;"></i>Share</p>
+                    </div>
+                    <hr/>
+                    <div class="storyaddcontainer">
+                        <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+                        <input type="text" placeholder="Write a comment..." style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color: #696969;border-style: none;"/>
+                        </div>
+                
+                </div>
+
+            </div>
+        </div>
+        
+   </div>
+</body>
+</html>
