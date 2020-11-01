@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     
+    <title>Facebook</title>
+
+   <script>
+       $(document).ready(function(){
+
+        $('#seemore').click(function(){
+            $('#moreless').css({'visibility':'visible','margin-top':'-70px'});
+            $('#seemorepara').css('visibility','hidden');
+            $('#seelesspara').css('visibility','visible');
+        })
+
+        $('#seeless').click(function(){
+            $('#moreless').css('visibility','hidden');
+            $('#seemorepara').css('visibility','visible');
+            $('#seelesspara').css('visibility','hidden');
+        })
+
+        var screate=false;
+        var snoti=false;
+        var smsg=false;
+        var sdrop=false;
+
+        $('#showcrea').click(function(){
+
+            if(screate==false)
+         {
+           $('#crea').css('visibility','visible');
+           $('#create').css('visibility','hidden');
+           $('#msg').css('visibility','hidden');
+           $('#dropdown').css('visibility','hidden');
+           screate=true;
+         }
+         else if(screate==true)
+         {
+            $('#crea').css('visibility','hidden');
+            screate=false;
+         }
+        })
+
+        $('#shownoti').click(function(){
+        
+        if(snoti==false)
+        {
+           $('#crea').css('visibility','hidden');
+           $('#create').css('visibility','visible');
+           $('#msg').css('visibility','hidden');
+           $('#dropdown').css('visibility','hidden');
+           snoti=true;
+        }
+        else if(snoti==true){
+            $('#create').css('visibility','hidden');
+            snoti=false;
+        }
+        })
+
+        $('#showmsg').click(function(){
+        if(smsg==false)
+        {
+           $('#crea').css('visibility','hidden');
+           $('#create').css('visibility','hidden');
+           $('#msg').css('visibility','visible');
+           $('#dropdown').css('visibility','hidden');
+           smsg=true;
+        }
+        else if(smsg==true)
+        {
+            $('#msg').css('visibility','hidden');
+            smsg=false;
+        }
+        })
+
+        $('#showdrop').click(function(){
+        if(sdrop==false)
+        {
+           $('#crea').css('visibility','hidden');
+           $('#create').css('visibility','hidden');
+           $('#msg').css('visibility','hidden');
+           $('#dropdown').css('visibility','visible');
+           sdrop=true;
+        }
+        else if(sdrop==true)
+        {
+            $('#dropdown').css('visibility','hidden');
+             sdrop=false;
+        }
+        })
+
+
+        $('#exitcontainer').click(function(){
+           $('#crea').css('visibility','hidden');
+           $('#create').css('visibility','hidden');
+           $('#msg').css('visibility','hidden');
+           $('#dropdown').css('visibility','hidden');
+        })
+        
+
+
+        
+
+       })
+   </script>
+
+
+    <style>
+
+
+
+.list ul{
+  display:inline-flex;
+  list-style: none;
+  color: white;
+  margin-top: -5px;
+  
+}
+
+.list ul li a{
+ text-decoration:none;
+ color:white;
+ 
+}
+
+
+.sub-list {
+ display:block;
+ position:absolute;
+ margin-top:5px;
+ background-color:#3d3d3d;
+ border-radius: 10px;
+ width:350px;
+ right:10px;
+ visibility:hidden;
+ 
+}
+
+.sub-list-toggle {
+ display:block;
+ position:absolute;
+ margin-top:5px;
+ background-color:#3d3d3d;
+ border-radius: 10px;
+ width:350px;
+ right:10px;
+ visibility:visible;
+ 
+}
+
+
+
+
+
+
+
+
+    .storycontainer {
+  position: relative;
+  margin:0.7%;
+  color: white;
+
+  
+}
+#contact .contactfriend:hover{
+    background-color:#696969;
+    border-radius: 10px;
+}
+
+.contactfriend{
+    display: flex;flex-direction: row;
+    margin-top: 5%;
+}
+
+
+.bottom-left {
+  position: absolute;
+  bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  color:magenta;
+  left: 16px;
+}
+.bottom-right {
+  position: absolute;
+  bottom: 5px;
+  left:30px;
+}
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.storyoutercontainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: auto;
+  border-radius: 20px;
+  width: 90%;
+  padding: 1%;
+}
+
+.storypostcontainer{
+    width:90%;
+    margin-top: 2%;
+    height:auto;
+    border-radius: 20px;
+   background-color:#353839;
+    padding:1%;
+    margin-top: 7%;
+   
+}
+.storyaddcontainer{
+   
+    display: flex;
+    flex-direction: row;
+}
+.storyactivitycontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.storyactivitycontainer p:hover{
+    background-color: #696969;
+}
+
+.videochatroom{
+    width:90%;
+    height:auto;
+    padding:1%;
+    border-radius: 20px;
+    background-color: #3d3d3d;
+    margin-top: 2%;
+}
+.videochatinner{
+    display: flex;flex-direction: row;justify-content:space-between;
+}
+.userpostdisplay{
+    width:90%;
+    height:auto;
+    padding:1%;
+    background-color: #353839;
+    border-radius: 20px;
+    margin-top: 2%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% 50% 25%; 
+}
+
+.grid-item {
+ 
+ 
+  padding: 20px;
+  height: 600px;
+  overflow-y:hidden;
+  
+}
+
+.grid-item:hover{
+    overflow-y: auto;
+}
+
+#firstgriditem p:hover{
+width:100%;
+height:40px;
+background-color: #696969;
+border-radius: 10px;
+}
+.grid-item-2 {
+
+ padding-left: 8%;
+ padding-top: 5%;
+ height: 600px;
+ overflow-y:scroll;
+
+}
+.grid-item-2::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+.grid-item-3 {
+ 
+ 
+ padding: 20px;
+ height:600px;
+ overflow-y:hidden;
+ 
+ 
+}
+
+.grid-item-3:hover{
+    overflow-y: scroll;
+}
+
+
+
+::placeholder {
+  color: white;
+  opacity: 1; 
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A9A9A9; 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3d3d3d; 
+}
+
+.navbar{
+    display: flex;justify-content:space-around;flex-direction: row; padding:5px;background-color:#141414;border-bottom: 1px solid grey;
+    height:50px;
+}
+.navbar-menu{
+    display: flex; flex-direction: row;margin-left: 10%;margin-right: 10%;margin-top: 0.5%;
+}
+
+#item i:hover{
+    border-bottom: 3px solid #1E90FF;
+    color:#1E90FF !important;
+}
+
+.groupclass{
+    display: flex;flex-direction: row;white-space: pre;
+    margin-top: 5%;
+}
+
+.groupclass:hover{
+    background-color: #696969;
+    border-radius: 10px;
+}
+
+.storyoutercontainer .storycontainer:hover{
+    border:3px solid #1E90FF;
+    border-radius: 20px;
+}
+
+.notification{
+    width:100%;height: auto;border-radius: 10px;margin-top: 5%;padding:5px;
+}
+
+.notification:hover{
+    background-color: #696969;
+    padding:5px;
+}
+
+.friendrequest{
+    width:100%;height: auto;border-radius: 10px;padding:5px;
+}
+
+.friendrequest:hover{
+    background-color: #696969;
+}
+
+.create{
+    
+    background-color: #141414;
+    color:white;
+    width:30%;
+    height:auto;
+    border:2px solid red;
+    top:100;
+    visibility: hidden;
+    margin-top: -100px;
+}
+
+    </style>
+   
+</head>
+<body style="background-color:#141414;color: white;">
+   
+
+    <div class="navbar">
+        <div class="storyaddcontainer">
+            <img src="fb.png" width="50px" height="50px" style="border-radius: 25px;"/>
+            <input type="text" placeholder="Search Facebook" style="width:250px; height:20px;margin-left: 2%;border-radius: 20px;padding: 10px;margin-top: 1%;background-color: #3d3d3d;border-style: none;"/>
+        </div>
+        <div class="navbar-menu" id="item">
+            <a href="#" style="text-align: center;"><i class="fa fa-home fa-2x" aria-hidden="true"  style="width: 150px;height:46px;color:#A9A9A9;align-items: center;"></i></a>
+            <a href="video.html" style="text-align: center;"><i class="fa fa-video-camera fa-2x" aria-hidden="true"  style="width:150px;height:46px;color:#A9A9A9"></i></a>
+            <a href="group.html" style="text-align: center;"><i class="fa fa-users fa-2x" aria-hidden="true"  style="width: 150px;height:46px;color:#A9A9A9"></i></a>
+            
+        </div>
+        <div style="display: flex;flex-direction: row;">
+            <a href="profile.html" style="color: white;text-decoration: none;font-weight: bold;">  <div style="display: flex;flex-direction: row;white-space: pre;">
+                <img  src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%; margin-right: 2%;"/>
+                <p style="margin-left:10px;">Dhairya</p>
+                
+            </div></a>
+            <div class="list">
+            <ul>
+             <li><div style="width: 50px;height: 50px;border-radius: 25px;background-color:#3d3d3d;text-align: center;margin-left:-15px;">
+                <i class="fa fa-plus" aria-hidden="true" id="showcrea"  style="margin-top:15px;"></i>
+            </div>
+
+            <div class="sub-list" id="crea">
+
+                <h2 style="margin-left: 15px;">Create</h2>
+              
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <h4 style="margin-top: 2px;margin-left: 2%;">Post</h4>
+                  </div>
+                  <p style="margin-left:20%;margin-top: -25px;">Share a post on news feed.</p>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-columns fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <h4 style="margin-top: 2px;margin-left: 2%;">Story</h4>
+                  </div>
+                  <p style="margin-left:20%;margin-top: -25px;">Share a photo or write something.</p>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-star fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <h4 style="margin-top: 2px;margin-left: 2%;">Life Event</h4>
+                  </div>
+                  <p style="margin-left:20%;margin-top: -25px;">Add a life event to your profile.</p>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-flag fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <h4 style="margin-top: 2px;margin-left: 2%;">Page</h4>
+                  </div>
+                  <p style="margin-left:20%;margin-top: -25px;">Share and connect with customers and friends.</p>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-handshake-o fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <h4 style="margin-top: 2px;margin-left: 2%;">Page</h4>
+                  </div>
+                  <p style="margin-left:20%;margin-top: -25px;">Advertise your Business.</p>
+                </a>
+               
+        
+               
+            </div>
+
+            <div class="sub-list" id="create">
+
+                <h2 style="margin-left: 15px;">Notifications</h2>
+                
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-birthday-cake fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <p style="margin-top: 2px;margin-left: 2%;">Vani Khurana</p>
+                  </div>
+                  <p style="margin-left:20%;margin-top: -25px;">Today is Vani Khurana's birthday send him good wishes.</p>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-columns fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <p style="margin-top: 2px;margin-left: 2%;">Shubham Soni</p>
+                  </div>
+                  <p style="margin-left:20%;margin-top: -25px;">Shared a Post</p>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-video-camera fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <p style="margin-top: 2px;margin-left: 2%;">Sakshi Sharma</p>
+                  </div>
+                  <p style="margin-left:20%;margin-top: -25px;">Shared a Video</p>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <p style="margin-top: 2px;margin-left: 2%;">Ritika Verma</p>
+                  </div>
+                  <p style="margin-left:20%;margin-top: -25px;">Shared a Post</p>
+                </a>
+            
+            </div>
+
+            <div class="sub-list" id="msg">
+
+                <h2 style="margin-left: 15px;">Messenger</h2>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <img src="sachin.jpg" width="50px" height="50px" style="border-radius:25px;margin-left:3%;"/>
+                    <p style="margin-top:10px;margin-left: 2%;">Aditya Singh</p>
+                  </div>
+                </a>
+               <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <img src="kohli.jpg" width="50px" height="50px" style="border-radius:25px;margin-left:3%;"/>
+                    <p style="margin-top:10px;margin-left: 2%;">Karan Singh</p>
+                  </div>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <img src="smriti.jpg" width="50px" height="50px" style="border-radius:25px;margin-left:3%;"/>
+                    <p style="margin-top:10px;margin-left: 2%;">Sakshi Sharma</p>
+                  </div>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <img src="ben10.jpg" width="50px" height="50px" style="border-radius:25px;margin-left:3%;"/>
+                    <p style="margin-top:10px;margin-left: 2%;">Mayank Kumar</p>
+                  </div>
+                </a>
+                <hr/>
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <img src="kedarnath.jpg" width="50px" height="50px" style="border-radius:25px;margin-left:3%;"/>
+                    <p style="margin-top:10px;margin-left: 2%;">Ritika Verma</p>
+                  </div>
+                </a>
+                
+                
+                
+            </div>
+
+            <div class="sub-list" id="dropdown">
+                <a href="#"> 
+                    <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                    <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                        <i class="fa fa-cog fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                    </div>
+                    <p style="margin-top: 10px;margin-left: 2%;font-size: 20px;">Setting & privacy</p>
+                  </div>
+                
+                </a>
+              <hr/>
+              <a href="#"> 
+                <div style="display: flex;flex-direction: row;margin-top: 15px;">
+                <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                    <i class="fa fa-question-circle fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+                </div>
+                <p style="margin-top: 10px;margin-left: 2%;font-size: 20px;">Help & support</p>
+              </div>
+            
+            </a>
+          <hr/>
+          <a href="#"> 
+            <div style="display: flex;flex-direction: row;margin-top: 15px;">
+            <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                <i class="fa fa-moon-o fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+            </div>
+            <p style="margin-top: 10px;margin-left: 2%;font-size: 20px;">Display preferences</p>
+          </div>
+        </a>
+      <hr/>
+          <a href="login.html"> 
+            <div style="display: flex;flex-direction: row;margin-top: 15px;">
+            <div style="width: 50px;height: 50px;border-radius: 25px;background-color:#696969;text-align: center;margin-left: 15px;">
+                <i class="fa fa-sign-out fa-2x" aria-hidden="true" id="showcrea"  style="margin-top:10px;"></i>
+            </div>
+            <p style="margin-top: 10px;margin-left: 2%;font-size: 20px;">Log Out</p>
+          </div>
+        </a>
+      
+            </div>
+        
+           </li>
+            <li><div style="width: 50px;height: 50px;border-radius: 25px;background-color:#3d3d3d;text-align: center;margin-left: 15px;">
+                <i class="fa fa-bell" aria-hidden="true"  id="shownoti" style="margin-top:15px;"></i>
+            </div>
+          
+        </li>
+            <li><div style="width: 50px;height: 50px;border-radius: 25px;background-color:#3d3d3d;text-align: center;margin-left: 15px;">
+                <i class="fa fa-envelope" aria-hidden="true" id="showmsg" style="margin-top:15px;"></i>
+            </div></li>
+            <li><div style="width: 50px;height: 50px;border-radius: 25px;background-color:#3d3d3d;text-align: center;margin-left: 15px;">
+                <i class="fa fa-caret-down fa-2x" aria-hidden="true" id="showdrop"  style="margin-top:10px;"></i>
+            </div></li>
+            </ul>
+            </div>
+    </div>
+
+        
+
+    </div>
+  
+    <div class="grid-container">
+        <div class="grid-item" id="firstgriditem">
+          <a href="profile.html" style="color:white;text-decoration: none;">  <div style="display: flex;flex-direction: row;white-space: pre;">
+                <img  src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px; margin-right: 2%;margin-top: 2%;"/>
+                <p style="height: 40px;padding-left: 10px;padding-top: 10px;">Dhairya Wadhwani</p> 
+            </div></a>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-user fa" aria-hidden="true"  style="margin-right: 2%;color:#1E90FF"></i>Friends</p>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-users fa" aria-hidden="true"  style="margin-right: 2%;color:greenyellow"></i>Groups</p>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-video-camera " aria-hidden="true"  style="margin-right: 2%;color:lightcoral"></i>Videos</p>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-list-alt" aria-hidden="true"  style="margin-right: 2%;color:#cdaa49"></i>Events</p>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-clock-o" aria-hidden="true"  style="margin-right: 2%;color:lightskyblue"></i>Memories</p>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-bookmark" aria-hidden="true"  style="margin-right: 2%;color:rgb(247, 15, 158)"></i>Saved</p>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-flag" aria-hidden="true"  style="margin-right: 2%;color:orange"></i>Pages</p>
+            <p id="seemorepara" style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;visibility: visible;"><i id="seemore" class="fa fa-caret-down" aria-hidden="true"  style="margin-right: 2%;"></i>See More</p>
+            <div id="moreless" style="visibility:hidden;">
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-gamepad" aria-hidden="true"  style="margin-right: 2%;"></i>Games</p>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-briefcase" aria-hidden="true"  style="margin-right: 2%;color:brown"></i>Jobs</p>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-podcast" aria-hidden="true"  style="margin-right: 2%;"></i>Most Recent</p>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;"><i class="fa fa-bolt" aria-hidden="true"  style="margin-right: 2%;color:burlywood"></i>Weather</p>
+            </div>
+            <p style="white-space: pre;font-size: 20px;height: 40px;padding-left: 10px;padding-top: 10px;visibility:hidden;" id="seelesspara"><i id="seeless" class="fa fa-caret-up" aria-hidden="true"  style="margin-right: 2%;"></i>See Less</p>
+        </div>
+    <div class="grid-item-2" >
+    <div class="storyoutercontainer">
+     <div class="storycontainer">
+          <img src="ben10.jpg" width="120px" height="220px" style="border-radius: 20px;"/>
+          <div class="bottom-left">Ben 10</div>
+          <img class="top-left" src="ben10.jpg" width="50px" height="50px" style="border-radius: 25px;border:3px solid #1E90FF;"/>
+     </div>    
+
+     <div class="storycontainer">
+        <img src="sachin.jpg" width="120px" height="220px" style="border-radius: 20px;"/>
+        <div class="bottom-left">Sachin</div>
+        <img class="top-left" src="sachin.jpg" width="50px" height="50px" style="border-radius: 25px;border:3px solid #1E90FF;"/>
+   </div>    
+
+   <div class="storycontainer">
+    <img src="kedarnath.jpg" width="120px" height="220px" style="border-radius: 20px;"/>
+    <div class="bottom-left">kedarnath</div>
+    <img class="top-left" src="kedarnath.jpg" width="50px" height="50px" style="border-radius: 25px;border:3px solid #1E90FF;"/>
+</div>   
+<div class="storycontainer">
+    <img src="kohli.jpg" width="120px" height="220px" style="border-radius: 20px;"/>
+    <div class="bottom-left">Virat Kohli</div>
+    <img class="top-left" src="kohli.jpg" width="50px" height="50px" style="border-radius: 25px;border:3px solid #1E90FF;"/>
+</div>   
+
+<div class="storycontainer">
+    <img src="luka.jpg" width="120px" height="220px" style="border-radius: 20px;"/>
+    <div class="bottom-left">Movie</div>
+    <img class="top-left" src="luka.jpg" width="50px" height="50px" style="border-radius: 25px;border:3px solid #1E90FF;"/>
+</div>   
+
+
+</div>
+<div class="storypostcontainer">
+    <div class="storyaddcontainer">
+    <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+    <input type="text" placeholder="What's on your mind, Dhairya?" style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color:#696969;border-style: none;"/>
+    </div>
+    <hr/>
+    <div class="storyactivitycontainer">
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-video-camera" aria-hidden="true"  style="margin-right: 5%;color:rgb(247, 15, 158)"></i>Live Video</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-picture-o" aria-hidden="true"  style="margin-right: 5%;color:lightgreen"></i>Photos/Videos</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-smile-o" aria-hidden="true"  style="margin-right: 5%;color:yellow"></i>Feeling/Activity</p>
+
+    </div>
+</div>
+
+
+<div class="videochatroom">
+    <div class="videochatinner">
+        <p style="white-space: pre;"><i class="fa fa-video-camera" aria-hidden="true"  style="margin-right: 2%;"></i>Rooms: Video Chat With Friends<i class="fa fa-info-circle" aria-hidden="true" style="margin-left: 2%;"></i></p>
+        <p>Create Room</p>
+    </div>
+   <div style="display:flex;flex-direction: row;margin:2%;position: relative;text-align: center;">
+    <div style="position: relative;background-color: cyan;width: 50px;height: 50px;border-radius: 25px;text-align: center;">
+        <i class="fa fa-plus" aria-hidden="true" style="margin-top:20px;color: black;"></i>
+   </div>
+    <img  src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%;"/>
+    <img  src="kohli.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%;"/>
+    <img  src="kedarnath.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%;"/>
+    <img  src="bheem.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%;"/>
+    <img  src="sachin.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%;"/>
+    <img  src="luka.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%;"/>
+   </div>
+
+</div>
+
+<div class="userpostdisplay">
+    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+        <div style="display: flex;flex-direction: row;white-space: pre;">
+            <img  src="kedarnath.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%; margin-right: 2%;"/>
+            <p>Aditya Chawla</p>
+            
+        </div>
+        <div style="margin-top: 1%;">
+            <i class="fa fa-ellipsis-h fa-2x" aria-hidden="true" ></i>
+        </div>
+    </div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <img  src="sachin.jpg" width="100%" height="400px" style="margin-top: 5%;"/>
+    <div class="storyactivitycontainer">
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"  style="margin-right: 2%;"></i>Like</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-comments-o" aria-hidden="true"  style="margin-right: 2%;"></i>Comment</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-share" aria-hidden="true"  style="margin-right: 2%;"></i>Share</p>
+
+    </div>
+    <hr/>
+    <div class="storyaddcontainer">
+        <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+        <input type="text" placeholder="Write a comment..." style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color: #696969;border-style: none;"/>
+        </div>
+
+</div>
+
+<div class="userpostdisplay">
+    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+        <div style="display: flex;flex-direction: row;white-space: pre;">
+            <img  src="kohli.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%; margin-right: 2%;"/>
+            <p>Parag Bansal</p>
+            
+        </div>
+        <div style="margin-top: 1%;">
+            <i class="fa fa-ellipsis-h fa-2x" aria-hidden="true" ></i>
+        </div>
+    </div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <img  src="kedarnath.jpg" width="100%" height="400px" style="margin-top: 5%;"/>
+    <div class="storyactivitycontainer">
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"  style="margin-right: 2%;"></i>Like</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-comments-o" aria-hidden="true"  style="margin-right: 2%;"></i>Comment</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-share" aria-hidden="true"  style="margin-right: 2%;"></i>Share</p>
+
+    </div>
+    <hr/>
+    <div class="storyaddcontainer">
+        <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+        <input type="text" placeholder="Write a comment..." style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color: #696969;border-style: none;"/>
+        </div>
+
+</div>
+
+
+<div class="userpostdisplay">
+    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+        <div style="display: flex;flex-direction: row;white-space: pre;">
+            <img  src="bheem.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%; margin-right: 2%;"/>
+            <p>Aman Singh</p>
+            
+        </div>
+        <div style="margin-top: 1%;">
+            <i class="fa fa-ellipsis-h fa-2x" aria-hidden="true" ></i>
+        </div>
+    </div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <img  src="bheem.jpg" width="100%" height="400px" style="margin-top: 5%;"/>
+    <div class="storyactivitycontainer">
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"  style="margin-right: 2%;"></i>Like</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-comments-o" aria-hidden="true"  style="margin-right: 2%;"></i>Comment</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-share" aria-hidden="true"  style="margin-right: 2%;"></i>Share</p>
+
+    </div>
+    <hr/>
+    <div class="storyaddcontainer">
+        <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+        <input type="text" placeholder="Write a comment..." style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color: #696969;border-style: none;"/>
+        </div>
+
+</div>
+
+<div class="userpostdisplay">
+    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+        <div style="display: flex;flex-direction: row;white-space: pre;">
+            <img  src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;margin-left: 2%; margin-right: 2%;"/>
+            <p>Dhairya Wadhwani</p>
+            
+        </div>
+        <div style="margin-top: 1%;">
+            <i class="fa fa-ellipsis-h fa-2x" aria-hidden="true" ></i>
+        </div>
+    </div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <img  src="kohli.jpg" width="100%" height="400px" style="margin-top: 5%;"/>
+    <div class="storyactivitycontainer">
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"  style="margin-right: 2%;"></i>Like</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-comments-o" aria-hidden="true"  style="margin-right: 2%;"></i>Comment</p>
+        <p style="white-space: pre;width: 150px;text-align: center;padding: 5px;border-radius: 10px;"><i class="fa fa-share" aria-hidden="true"  style="margin-right: 2%;"></i>Share</p>
+
+    </div>
+    <hr/>
+    <div class="storyaddcontainer">
+        <img src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+        <input type="text" placeholder="Write a comment..." style="width:80%; height:auto;margin-left: 2%;border-radius: 20px;padding: 10px;background-color: #696969;border-style: none;"/>
+        </div>
+
+</div>
+
+</div>
+<div class="grid-item-3">
+    <div class="friendrequest">
+             <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                 <p style="margin-left: 5px;">Friend Request</p>
+                 <p style="margin-right: 5px;">See All</p>
+             </div>
+             <div style="display: flex;flex-direction: row;white-space: pre;">
+                <img  src="msd.jpg" width="50px" height="50px" style="border-radius: 25px;margin-right: 5%;"/>
+                <p>Sagar Gupta</p>
+                
+            </div>
+             <div style="display: flex;flex-direction: row;justify-content: space-evenly;margin-top: 5%;margin-bottom: 5%;">
+                <button style="height:40px;width: 40%;border-radius: 10px;background-color:#1E90FF;color: white;border-style: none;font-weight: bold;">Confirm</button>
+                <button style="height:40px;width: 40%;border-radius: 10px;background-color: #3d3d3d;color:white;font-weight: bold;border-style: none;">Delete</button>
+            </div>
+
+            <div style="display: flex;flex-direction: row;white-space: pre;">
+                <img  src="2002.jpg" width="50px" height="50px" style="border-radius: 25px;margin-right: 5%;"/>
+                <p>Abhinav Kumar</p>
+                
+            </div>
+             <div style="display: flex;flex-direction: row;justify-content: space-evenly;margin-top: 5%;margin-bottom: 5%;">
+                <button style="height:40px;width: 40%;border-radius: 10px;background-color:#1E90FF;color: white;font-weight: bold;border-style: none;">Confirm</button>
+                <button style="height:40px;width: 40%;border-radius: 10px;background-color: #3d3d3d;color:white;font-weight: bold;border-style: none;">Delete</button>
+            </div>
+            
+    </div>
+    <hr/>
+    <div class="notification">
+        <div style="display: flex;flex-direction: row;justify-content: space-between;">
+            <p style="margin-left: 5px;">Notifications</p>
+            <p style="margin-right: 5px;">See All</p>
+        </div>
+        <div style="display: flex;flex-direction: row;white-space: pre;">
+            <img  src="dhairyapass2.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+            <p style="margin-top: 2px;margin-left:5%;">Dhairya Wadhwani</p>
+        </div>
+        <p style="margin-left:20%;margin-top: -25px;">Today is Dhairya Wadhwani's birthday send him good wishes.</p>
+    
+    </div>
+
+<hr/>
+     <div style="width:100%;height: auto;margin-top: 5%;">
+        <div style="display: flex;flex-direction: row;justify-content: space-around;">
+            <p style="margin-left: -50px;">Friends/Contacts</p>
+           <div style="display: flex;flex-direction: row;margin-top: 5%;">
+                <i class="fa fa-video-camera" aria-hidden="true" style="margin-left:10%"></i>
+                <i class="fa fa-search" aria-hidden="true" style="margin-left:40%"></i>
+                <i class="fa fa-ellipsis-h" aria-hidden="true" style="margin-left:40%"></i>
+           </div>
+        </div>
+        <div id="contact">
+        <div class="contactfriend">
+        <div class="storycontainer">
+            <img src="sachin.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+            <img class="bottom-right" src="greendot.png" width="10px" height="10px" />
+        </div> 
+        <p style="padding-left: 5%;">Himanshu Singh</p>
+      </div>
+      <div class="contactfriend">
+        <div class="storycontainer">
+            <img src="2002.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+            <img class="bottom-right" src="greendot.png" width="10px" height="10px" />
+        </div> 
+        <p style="padding-left: 5%;">Shivam Tewari</p>
+      </div>
+      <div class="contactfriend">
+        <div class="storycontainer">
+            <img src="mithali.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+            <img class="bottom-right" src="greendot.png" width="10px" height="10px" />
+        </div> 
+        <p style="padding-left: 5%;">Vani Khurana</p>
+      </div>
+      <div class="contactfriend">
+        <div class="storycontainer">
+            <img src="kedarnath.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+            <img class="bottom-right" src="greendot.png" width="10px" height="10px" />
+        </div> 
+        <p style="padding-left: 5%;">Aditya Singh</p>
+      </div>
+      <div class="contactfriend">
+        <div class="storycontainer">
+            <img src="msd.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+            <img class="bottom-right" src="greendot.png" width="10px" height="10px" />
+        </div> 
+        <p style="padding-left: 5%;">Shruti Jha</p>
+      </div>
+    </div>
+    </div>
+<hr/>
+<div style="width:100%;height: auto;border-radius: 10px;margin-top: 5%;">
+    <p>Group Conversations</p>
+    <div style="display:flex;flex-direction: row;margin-left:3px;position: relative;text-align: center;">
+        <div style="position: relative;background-color: cyan;width: 45px;height: 45px;border-radius: 22.5px;text-align: center;">
+            <i class="fa fa-plus" aria-hidden="true" style="margin-top:15px;color:black;"></i>
+       </div>
+       <p style="margin-left: 5px;">Create New Group</p>
+    </div>
+    <p style="margin-left: 10px;">Existing Groups</p>
+    <div class="groupclass">
+        <img  src="ben10.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+        <p style="padding-left: 5%;">Brain Masters Club </p>
+    </div>
+    <div class="groupclass">
+        <img  src="chetak.jpg" width="50px" height="50px" style="border-radius: 25px;"/>
+        <p style="padding-left: 5%;">Cricket Lover</p>
+    </div>
+</div>
+
+</div>
+</div>
+</body>
+
+</html>
