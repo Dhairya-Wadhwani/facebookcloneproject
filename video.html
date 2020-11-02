@@ -5,7 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Groups</title>
+    <link rel="stylesheet" href="home.css">
+    <title>Videos</title>
+    <script>
+        $(document).ready(function(){
+            $(function(){
+           $("#navbar").load("nav.html");
+           });
+
+           $('#showcrea').click(function(){
+
+if(screate==false)
+{
+$('#crea').css('visibility','visible');
+$('#create').css('visibility','hidden');
+$('#msg').css('visibility','hidden');
+$('#dropdown').css('visibility','hidden');
+screate=true;
+}
+else if(screate==true)
+{
+$('#crea').css('visibility','hidden');
+screate=false;
+}
+})
+
+$('#shownoti').click(function(){
+
+if(snoti==false)
+{
+$('#crea').css('visibility','hidden');
+$('#create').css('visibility','visible');
+$('#msg').css('visibility','hidden');
+$('#dropdown').css('visibility','hidden');
+snoti=true;
+}
+else if(snoti==true){
+$('#create').css('visibility','hidden');
+snoti=false;
+}
+})
+
+$('#showmsg').click(function(){
+if(smsg==false)
+{
+$('#crea').css('visibility','hidden');
+$('#create').css('visibility','hidden');
+$('#msg').css('visibility','visible');
+$('#dropdown').css('visibility','hidden');
+smsg=true;
+}
+else if(smsg==true)
+{
+$('#msg').css('visibility','hidden');
+smsg=false;
+}
+})
+
+$('#showdrop').click(function(){
+if(sdrop==false)
+{
+$('#crea').css('visibility','hidden');
+$('#create').css('visibility','hidden');
+$('#msg').css('visibility','hidden');
+$('#dropdown').css('visibility','visible');
+sdrop=true;
+}
+else if(sdrop==true)
+{
+$('#dropdown').css('visibility','hidden');
+ sdrop=false;
+}
+})
+
+
+        })
+    </script>
 </head>
 <style>
     .grid-container{
@@ -94,6 +169,9 @@
 
 </style>
 <body style="color:white;background-color:#141414;">
+    <div id="navbar">
+
+    </div>
     <div class="grid-container">
       <div class="grid-item">
        
@@ -157,7 +235,7 @@
             <p style="margin-left:10%;margin-top: -25px;">3h ago</p>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <video width="100%" height="240" controls>
-                <source src="llc.mp4" type="video/mp4">
+                <source src="video1.mp4" type="video/mp4">
               
               </video>
             <div class="storyactivitycontainer">
@@ -191,7 +269,7 @@
             <p style="margin-left:10%;margin-top: -25px;">5 days ago</p>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <video width="100%" height="240" controls>
-                <source src="prada.mp4" type="video/mp4">
+                <source src="video2.mp4" type="video/mp4">
               
               </video>
             <div class="storyactivitycontainer">
@@ -224,7 +302,7 @@
             <p style="margin-left:10%;margin-top: -25px;">2 weeks ago</p>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <video width="100%" height="240" controls>
-                <source src="humnava.mp4" type="video/mp4">
+                <source src="Video3.mp4" type="video/mp4">
               
               </video>
             <div class="storyactivitycontainer">
@@ -257,7 +335,7 @@
             <p style="margin-left:10%;margin-top: -25px;">3h ago</p>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <video width="100%" height="240" controls>
-                <source src="Losafar.mp4" type="video/mp4">
+                <source src="Video5.mp4" type="video/mp4">
               
               </video>
             <div class="storyactivitycontainer">
