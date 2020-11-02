@@ -5,94 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="home.css">
     <title>Groups</title>
-</head>
-<style>
-    .grid-container{
-        display:grid;
-        grid-template-columns: 25% 75%;
-    }
-    .grid-item-2{
+    <script>
+        $(document).ready(function(){
+            $(function(){
+           $("#navbar").load("nav.html");
+           });
+
+           $('#showcrea').click(function(){
+
+if(screate==false)
+{
+$('#crea').css('visibility','visible');
+$('#create').css('visibility','hidden');
+$('#msg').css('visibility','hidden');
+$('#dropdown').css('visibility','hidden');
+screate=true;
+}
+else if(screate==true)
+{
+$('#crea').css('visibility','hidden');
+screate=false;
+}
+})
+
+$('#shownoti').click(function(){
+
+if(snoti==false)
+{
+$('#crea').css('visibility','hidden');
+$('#create').css('visibility','visible');
+$('#msg').css('visibility','hidden');
+$('#dropdown').css('visibility','hidden');
+snoti=true;
+}
+else if(snoti==true){
+$('#create').css('visibility','hidden');
+snoti=false;
+}
+})
+
+$('#showmsg').click(function(){
+if(smsg==false)
+{
+$('#crea').css('visibility','hidden');
+$('#create').css('visibility','hidden');
+$('#msg').css('visibility','visible');
+$('#dropdown').css('visibility','hidden');
+smsg=true;
+}
+else if(smsg==true)
+{
+$('#msg').css('visibility','hidden');
+smsg=false;
+}
+})
+
+$('#showdrop').click(function(){
+if(sdrop==false)
+{
+$('#crea').css('visibility','hidden');
+$('#create').css('visibility','hidden');
+$('#msg').css('visibility','hidden');
+$('#dropdown').css('visibility','visible');
+sdrop=true;
+}
+else if(sdrop==true)
+{
+$('#dropdown').css('visibility','hidden');
+ sdrop=false;
+}
+})
+
+
+
+        })
+    </script>
+    <style>
+        .grid-container{
+            display:grid;
+            grid-template-columns: 25% 75%;
+        }
+        .grid-item-2{
+            
+         
+            height:640px;
+            padding-left:4%;;
+            padding-top: 5%;
+            overflow-y:scroll;
         
-     
-        height:640px;
-        padding-left:4%;;
-        padding-top: 5%;
-        overflow-y:scroll;
-    
+        }
+       
+        .userpostdisplay{
+        width:50%;
+        height:auto;
+        padding:1%;
+        align-items: center;
+        background-color: #353839;
+        border-radius: 20px;
+        margin:5%;
+        margin-left: 20%;
+        margin-right: 25%;
     }
-   
-    .userpostdisplay{
-    width:50%;
-    height:auto;
-    padding:1%;
-    align-items: center;
-    background-color: #353839;
-    border-radius: 20px;
-    margin:5%;
-    margin-left: 20%;
-    margin-right: 25%;
-}
-.grid-item-2::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
+    .grid-item-2::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
+    
+    .grid-item {
+     
+     
+     padding: 20px;
+     height: 640px;
+     overflow-y:hidden;
+     
+    }
+    .grid-item:hover{
+        overflow-y:scroll   ;
+    }
+    
+    .storyaddcontainer{
+       
+       display: flex;
+       flex-direction: row;
+    }
+    
+    .storyactivitycontainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .storyactivitycontainer p:hover{
+        background-color: #696969;
+    }
+    
+    ::placeholder {
+      color: white;
+      opacity: 1; 
+    }
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+      border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #A9A9A9; 
+      border-radius: 10px;
+    }
+    
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3d3d3d; 
+    }
+    
+    </style>
+</head>
 
-.grid-item {
- 
- 
- padding: 20px;
- height: 640px;
- overflow-y:hidden;
- 
-}
-.grid-item:hover{
-    overflow-y:scroll   ;
-}
-
-.storyaddcontainer{
-   
-   display: flex;
-   flex-direction: row;
-}
-
-.storyactivitycontainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.storyactivitycontainer p:hover{
-    background-color: #696969;
-}
-
-::placeholder {
-  color: white;
-  opacity: 1; 
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #A9A9A9; 
-  border-radius: 10px;
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-  background: #3d3d3d; 
-}
-
-</style>
 <body style="color:white;background-color:#141414;">
+    <div id="navbar">
+
+    </div>
     <div class="grid-container">
       <div class="grid-item">
         <div style="display: flex;flex-direction: row;justify-content: space-between;">
@@ -159,7 +239,7 @@
             <p style="margin-left:10%;margin-top: -25px;">1 day ago</p>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <video width="100%" height="240" controls>
-                <source src="llc.mp4" type="video/mp4">
+                <source src="video0.mp4" type="video/mp4">
               
               </video>
             <div class="storyactivitycontainer">
@@ -253,7 +333,7 @@
             <p style="margin-left:10%;margin-top: -25px;">2 months ago</p>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <video width="100%" height="240" controls>
-                <source src="humnava.mp4" type="video/mp4">
+                <source src="Video5.mp4" type="video/mp4">
               
               </video>
             <div class="storyactivitycontainer">
